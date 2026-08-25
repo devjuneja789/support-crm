@@ -17,10 +17,10 @@ A full-stack web application designed for customer support ticket management, bu
 
 | Component | Technology |
 | :--- | :--- |
-| **Frontend** | React, Vite, Tailwind CSS[cite: 1] |
-| **Backend** | Node.js, Express[cite: 1] |
-| **Database** | PostgreSQL (or MongoDB)[cite: 1] |
-| **Deployment** | Render / Railway / Vercel[cite: 1] |
+| **Frontend** | React, Vite, Tailwind CSS   |
+| **Backend** | Node.js, Express   |
+| **Database** | PostgreSQL (or MongoDB)   |
+| **Deployment** | Render / Railway / Vercel   |
 
 ---
 
@@ -30,7 +30,7 @@ A full-stack web application designed for customer support ticket management, bu
 support-crm/
 ├── backend/
 │   ├── src/
-│   ├── schema.sql           # Database schema[cite: 1]
+│   ├── schema.sql           # Database schema  
 │   ├── server.js            # Application entry point
 │   ├── Dockerfile           
 │   └── package.json
@@ -50,30 +50,30 @@ support-crm/
 
 | Method | Endpoint | Description | Payload / Query |
 | :--- | :--- | :--- | :--- |
-| `POST` | `/api/tickets` | Create a new ticket[cite: 1] | Body: `{ customer_name, customer_email, subject, description }`[cite: 1] |
-| `GET` | `/api/tickets` | Retrieve tickets list[cite: 1] | Query: `?status=Open&search=query`[cite: 1] |
-| `GET` | `/api/tickets/:ticket_id` | Fetch ticket details & associated notes[cite: 1] | Params: `ticket_id`[cite: 1] |
-| `PUT` | `/api/tickets/:ticket_id` | Update status & attach internal notes[cite: 1] | Body: `{ status, notes }`[cite: 1] |
+| `POST` | `/api/tickets` | Create a new ticket   | Body: `{ customer_name, customer_email, subject, description }`   |
+| `GET` | `/api/tickets` | Retrieve tickets list   | Query: `?status=Open&search=query`   |
+| `GET` | `/api/tickets/:ticket_id` | Fetch ticket details & associated notes   | Params: `ticket_id`   |
+| `PUT` | `/api/tickets/:ticket_id` | Update status & attach internal notes   | Body: `{ status, notes }`   |
 
 ---
 
 ## Local Setup & Development
 
 ### 1. Database Setup
-Create your database and run the schema initialization script[cite: 1]:
+Create your database and run the schema initialization script  :
 ```bash
 createdb crm_db
 psql -d crm_db -f backend/schema.sql
 ```
 
 ### 2. Backend Configuration
-Navigate to the backend directory, install dependencies, and configure environment variables[cite: 1]:
+Navigate to the backend directory, install dependencies, and configure environment variables  :
 ```bash
 cd backend
 npm install
 ```
 
-Create a `backend/.env` file[cite: 1]:
+Create a `backend/.env` file  :
 ```env
 PORT=5000
 DATABASE_URL=postgresql://postgres:your_password@localhost:5432/crm_db
